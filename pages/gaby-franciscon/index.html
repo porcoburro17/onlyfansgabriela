@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriely Franciscon</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="app-container">
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-left">
+            <svg class="icon-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"></path>
+            </svg>
+
+            <div class="header-info">
+                <div class="header-name">
+                    <span>Gabriely franciscon</span>
+                    <svg class="verified-icon-small" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                    </svg>
+                </div>
+
+                <div class="header-stats">
+                    <span>📸 17</span>
+                    <span>🎥 21</span>
+                    <span>❤️ 445</span>
+                </div>
+            </div>
+        </div>
+
+        <img src="images/logo.png" class="of-logo" alt="Logo">
+    </header>
+
+    <!-- CAPA -->
+    <div class="cover-photo">
+        <img src="images/capa4.png" alt="Capa">
+    </div>
+
+    <!-- PERFIL -->
+    <div class="profile-section">
+        <div class="profile-top">
+            <div class="avatar-container live">
+                <img src="images/perfil.png" class="avatar" alt="Perfil">
+                <span class="live-badge">AO VIVO AGORA</span>
+            </div>
+        </div>
+
+        <div class="profile-info">
+            <h1 class="profile-name">
+                Gabriely franciscon
+                <svg class="verified-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none"></path>
+                </svg>
+            </h1>
+
+            <p class="profile-handle">@Gabriely.franciscon · Visto · 18+</p>
+
+            <p class="profile-bio">
+                Conta oficial da Gabriely Franciscon.<br>
+                Conteúdo exclusivo, sem censura e liberado na hora 🔥<br>
+                Assine agora e tenha acesso imediato 💋
+            </p>
+        </div>
+    </div>
+
+    <!-- ASSINATURA -->
+    <div class="subscription-section">
+        <p class="subscription-label">ASSINATURA</p>
+
+        <button class="subscribe-btn" onclick="salvarDadosProduto(1990,'1 MÊS')">
+            <span>1 MÊS</span>
+            <span class="price">R$ 19,90</span>
+        </button>
+
+        <button class="subscribe-btn secondary" onclick="salvarDadosProduto(2990,'12 MESES')">
+            <span>12 MESES</span>
+            <span class="price">R$ 29,90</span>
+        </button>
+
+        <button class="subscribe-btn premium" onclick="salvarDadosProduto(3790,'VITALÍCIO + CHAMADA')">
+            <span>VITALÍCIO + CHAMADA</span>
+            <span class="price">R$ 37,90</span>
+        </button>
+    </div>
+
+    <!-- POSTS -->
+    <div class="posts">
+
+        <!-- POST -->
+        <div class="post">
+            <div class="post-content">
+                <p>Conteúdo exclusivo… quer ver mais?</p>
+            </div>
+
+            <div class="post-media locked">
+                <video autoplay muted loop playsinline class="post-video">
+                    <source src="images/video2.mp4" type="video/mp4">
+                </video>
+
+                <div class="lock-overlay">🔒</div>
+            </div>
+
+            <div class="post-cta">
+                <button class="cta-btn" onclick="salvarDadosProduto(1990,'Desbloqueio')">
+                    DESBLOQUEAR POR R$ 19,90
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- DEPOIMENTOS -->
+    <div class="testimonials-section">
+        <h2 class="section-title">O que estão dizendo...</h2>
+
+        <div class="testimonial">
+            <img src="depoimentos/32.jpg">
+            <p>"Achei que era golpe, mas é real demais!"</p>
+        </div>
+
+        <div class="testimonial">
+            <img src="depoimentos/45.jpg">
+            <p>"Conteúdo pesado, sem censura 🔥"</p>
+        </div>
+
+        <div class="testimonial">
+            <img src="depoimentos/48.jpg">
+            <p>"Vale cada centavo."</p>
+        </div>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="cta-section">
+        <button class="cta-btn" onclick="salvarDadosProduto(1990,'Assinatura Mensal')">
+            ASSINAR AGORA POR R$ 19,90
+        </button>
+    </div>
+
+</div>
+
+<!-- SCRIPT LIMPO -->
+<script>
+function salvarDadosProduto(valorCentavos, nomeProduto) {
+    const dadosProduto = {
+        productId: 'produto_' + valorCentavos,
+        productName: nomeProduto,
+        productImage: 'images/perfil.png',
+        quantity: 1,
+        unitPrice: valorCentavos,
+        totalPrice: valorCentavos
+    };
+
+    localStorage.setItem('dadosProduto', JSON.stringify(dadosProduto));
+    window.location.href = 'checkout.html';
+}
+</script>
+
+<script src="js/scripts.js"></script>
+
+</body>
+</html>
